@@ -18,7 +18,6 @@
 * [工具](#工具)
 * [mod样板](mod样板)
 * [动画](#动画)
-* [和尖塔无关但你也许需要](#和尖塔无关但你也许需要)
 
 ## 网站
 * [ModTheSpire Wiki](https://github.com/kiooeht/ModTheSpire/wiki)<br>
@@ -46,16 +45,9 @@ Wiki上写了一些很实用的小工具，例如自动注册所有卡牌（Auto
 比较标准化的一个mod范例。
 
 ## 动画
+* [龙骨](https://dragonbones.github.io/cn/index.html)<br>
+可以导出spine动画的软件，一般使用这个足够，可以自己寻找可用版本。
+
 *制作动画需要一些基础，但其实大多数mod只需要一张图就够了。*
 * [Spine](http://zh.esotericsoftware.com/)<br>
 尖塔使用的2D动画软件。
-
-* [龙骨](https://dragonbones.github.io/cn/index.html)<br>
-可以导出spine动画的软件，只能使用最新版，可以来自己找或者来群里要。
-
-## 和尖塔无关但你也许需要
-* [SourceGraph](https://sourcegraph.com/search)<br>
-一个可以快速浏览Github储存库的网站（有Chrome扩展程序，可以在Github页面点击进入相应网页），用起来比Github浏览速度快，并且代码结构清晰，可以在Github抽风时使用。
-
-* [Github文件加速](https://gh.api.99988866.xyz/)<br>
-一个可以快速下载Github Release的网站。
