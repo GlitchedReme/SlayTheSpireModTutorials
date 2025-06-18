@@ -69,7 +69,7 @@ public class ExampleAction extends AbstractGameAction {
 
 如果上述条件满足，则`addToTop`一个抽牌action。
 
-关于addToBot和addToTop，addToBot表示排在最下边，addToTop表示排在最上边。
+关于addToBot和addToTop，addToBot表示排在最下边，addToTop表示排在最上边。按从上往下的顺序执行action。
 ![图片.png](https://s2.loli.net/2022/05/30/oji1rFIOqmWpUZY.png)
 在action里添加action时，一般使用`addToTop`排在最上边，这样让你的效果马上执行。
 

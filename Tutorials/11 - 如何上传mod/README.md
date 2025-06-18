@@ -20,3 +20,22 @@
 4. 回到根目录，打开cmd，输入`java -jar mod-uploader.jar upload -w [你mod的名字]`上传你的mod。上传完成后过一段时间就能看到你的mod了。
 
 5. 方便起见，可以在该目录下新建一个txt文件，把上传的命令复制到该文件，然后将它后缀改为cmd。这样以后上传只需要双击这个文件就可以了。
+
+## 重建工作区
+
+如果你因为换电脑等原因导致上传配置丢失，可以先重建一个新的工作区，然后在`config.json`中添加一个变量`steamPublishedID`。这个id可以在你mod的工坊页面URL中找到，格式为`https://steamcommunity.com/sharedfiles/filedetails/?id=1234567890`，其中的`1234567890`就是你的`steamPublishedID`。
+
+```json
+{
+  "steamPublishedID": "1234567890",
+  "title": "xxxxx",
+  "description": "",
+  "visibility": "public",
+  "changeNote": "",
+  "tags": ["English", "Simplified Chinese", "Character"]
+}
+```
+
+## 使用GIF作为工坊图
+
+~~我忘了怎么上传的，之后再补上~~

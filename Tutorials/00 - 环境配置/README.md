@@ -3,27 +3,29 @@
 在环境搭建之前，你需要了解开发杀戮尖塔mod需要的技术知识和东西：
 * Java
 * Json
-* 简单的图像处理
+* 简单的图像处理（PS）
 * 耐心
 
 *杀戮尖塔是使用Java编写的LibGDX游戏框架编写的，所以首先你需要一个开发Java的环境。*
 
 ## 1.安装Java
 
-杀戮尖塔使用Java8开发，首先你需要安装[Java8](https://www.oracle.com/java/technologies/downloads/#java8-windows)。
+杀戮尖塔使用Java8开发，首先你需要安装Java8。你可以选择[Oracle](https://www.oracle.com/java/technologies/downloads/#java8-windows)或者[Adoptium](https://adoptium.net/zh-CN/temurin/releases/?version=8&os=any&arch=any)或者其他发行版。
 
 ![001](https://i.loli.net/2021/11/09/BGyPpiD7kYzrn1d.png)<br>
 *注意Java版本、电脑操作系统和32位和64位（x64是64位）*
 
+*如果你选择IDEA作为编辑器，那么可以自动下载所需的Java版本，具体自行搜索。*
+
 ## 2.选择开发工具
 
-理论上使用什么编辑器都可以，可使用的有<b>Eclipse,IntelliJ,VsCode或~~记事本~~</b>。对于新手建议使用[Intellij](https://www.jetbrains.com/idea/download/#section=windows)，本教程对于<b>Intellij</b>和<b>VsCode</b>的使用都会讲解。
+理论上使用什么编辑器都可以，可使用的有<b>Eclipse,IntelliJ,VSCode或~~记事本~~</b>。对于新手建议使用[Intellij](https://www.jetbrains.com/idea/download/#section=windows)，本教程对于<b>Intellij</b>和<b>VSCode</b>的使用都会讲解。
 
 ### Intellij IDEA（以下简称idea）
 
 1. 安装<br>
 
-点击下方链接下载idea，注意下载免费社区版（Community）开发mod足够了。
+点击下方链接下载idea，注意<b>下载免费社区版（Community）</b>开发mod足够了。
 https://www.jetbrains.com/idea/download/#section=windows
 
 2. 创建新项目<br>
@@ -179,22 +181,80 @@ TIPS:
 
 <br><br><br>
 
-*后面的内容是关于vscode的配置的，idea功能强大但是内存占用过大并且启动时间长，你可以换vscode，功能差不多且速度快（但配置有点麻烦）*
+*后面的内容是关于vscode的配置的。如果你不需要跳过即可。*
 
-### VsCode
+### VSCode
 
-vscode简洁美观，并且可以自由使用许多插件。首先下载[VsCode](https://code.visualstudio.com/download)。
+vscode简洁美观，并且可以自由使用许多插件。首先下载[VSCode](https://code.visualstudio.com/download)。
 
-1. 在扩展中安装`Extension Pack for Java`插件。（如何安装插件自行百度）
+1. 在扩展中安装`Extension Pack for Java`插件。（如何安装插件参考搜索引擎，由于时间原因以下不可参考）
 
 ![007](https://i.loli.net/2021/11/10/TIo9HjxsrZlkUCw.png)
 
-由于该插件需要java11编译运行，你需要再安装一个jdk11。（可以在打开的欢迎界面安装）
-
-确保该界面出现以下信息。（如有错误可以自行百度vscode如何安装java开发环境）
+~~确保该界面出现以下信息。（如有错误可以自行搜索vscode如何安装java开发环境）~~
 
 ![008](https://i.loli.net/2021/11/10/5HGlJyvrT2VEwxU.png)
 
-2. 第二步需要安装[MAVEN](https://www.runoob.com/maven/maven-setup.html)。
+2. 第二步需要安装[MAVEN](https://www.runoob.com/maven/maven-setup.html)，确保添加到`PATH`。
 
 3. 第三步创建项目。使用vscode自带的创建项目有些麻烦，你可以直接复制该文件夹下的项目作为你的开始项目。(<b>`pom.xml`和`ModTheSpire.json`文件需要配置，请参照上方idea的文件配置一节</b>)
+
+4. 设置调试环境。
+
+在`.vscode/launch.json`文件中添加以下内容。
+
+```json
+{
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Java Program",
+      "request": "launch",
+      "mainClass": "com.megacrit.cardcrawl.desktop.DesktopLauncher",
+    // ModTheSpire的命令行配置，参考https://github.com/kiooeht/ModTheSpire/wiki/Command-Line-Arguments
+    //   "args": ["--mods", "basemod"],
+    // 杀戮尖塔根目录
+      "cwd": "path\\to\\your\\SlayTheSpire",
+    // Java8的路径
+      "javaExec": "path\\to\\your\\bin\\java.exe",
+      "preLaunchTask": "maven-package",
+    // Steam的路径
+      "classPaths": [
+        "path\\to\\your\\Steam\\steamapps\\workshop\\content\\646570\\1605060445\\ModTheSpire.jar"
+      ]
+    }
+  ]
+}
+}
+```
+
+在`.vscode/tasks.json`文件中添加以下内容。
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "maven-package",
+            "type": "shell",
+            "command": "mvn package",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                // "reveal": "silent",
+                "clear": true,
+                "panel": "shared"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ]
+        }
+    ]
+}
+```
+
+然后按`F5`即可调试。
