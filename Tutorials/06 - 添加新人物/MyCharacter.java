@@ -240,10 +240,10 @@ public class MyCharacter extends CustomPlayer {
 
         // 这个变量未被使用（呈现灰色）是正常的
         @SpireEnum
-        public static AbstractCard.LibraryType EXAMPLE_GREEN;
+        public static CardLibrary.LibraryType EXAMPLE_GREEN;
 
         // 如果你想添加新的颜色，不要忘记同时添加两个枚举
         // @SpireEnum
-        // public static AbstractCard.LibraryType EXAMPLE_RED;
+        // public static CardLibrary.LibraryType EXAMPLE_RED;
     }
 }
