@@ -164,7 +164,7 @@ public class MyCharacter extends CustomPlayer {
         return "ATTACK_HEAVY";
     }
 
-    // 游戏中左上角显示在你的名字之后的人物名称
+    // 人物名称
     @Override
     public String getLocalizedCharacterName() {
         return characterStrings.NAMES[0];
