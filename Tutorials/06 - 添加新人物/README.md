@@ -170,7 +170,7 @@ public class MyCharacter extends CustomPlayer {
         return characterStrings.NAMES[0];
     }
 
-    // 创建人物实例，照抄
+    // 创建人物实例，照抄，记得替换MyCharacter为你的类名
     @Override
     public AbstractPlayer newInstance() {
         return new MyCharacter(this.name);
