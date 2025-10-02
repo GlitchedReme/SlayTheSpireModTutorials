@@ -9,9 +9,7 @@
 
 <b>点击上方的Tutorials文件夹或者右侧的[教程网站](https://glitchedreme.github.io/SlayTheSpireModTutorials/)查看所有教程。</b>
 
-个人交流群：542370192<br>
-杀戮尖塔mod交流群：723677239
-
+个人交流群：542370192
 
 # 一些实用的工具/网站
 
